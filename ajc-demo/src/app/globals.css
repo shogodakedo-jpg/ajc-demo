@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* タブレット向けベーススタイル */
+  body {
+    @apply text-gray-800 bg-gray-50;
+    font-size: 16px;
+  }
+
+  /* フォームコントロール共通 */
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  input[type="email"],
+  input[type="password"],
+  select,
+  textarea {
+    @apply w-full rounded-lg border border-gray-300 px-4 py-3 text-lg
+           focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
+           bg-white;
+    min-height: 52px;
+  }
+
+  textarea {
+    min-height: 80px;
+  }
+}
+
+@layer components {
+  /* タブレット向け大きめボタン */
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg px-6 py-3 text-lg font-semibold
+           transition-colors duration-150 cursor-pointer select-none;
+    min-height: 52px;
+    min-width: 100px;
+  }
+
+  .btn-primary {
+    @apply btn bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800;
+  }
+
+  .btn-secondary {
+    @apply btn bg-gray-200 text-gray-700 hover:bg-gray-300 active:bg-gray-400;
+  }
+
+  .btn-danger {
+    @apply btn bg-red-600 text-white hover:bg-red-700 active:bg-red-800;
+  }
+
+  .btn-success {
+    @apply btn bg-green-600 text-white hover:bg-green-700 active:bg-green-800;
+  }
+
+  .btn-sm {
+    @apply px-4 py-2 text-base;
+    min-height: 40px;
+    min-width: 60px;
+  }
+
+  /* カード */
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-200 p-6;
+  }
+
+  /* セクションタイトル */
+  .section-title {
+    @apply text-xl font-bold text-gray-700 border-l-4 border-blue-500 pl-3 mb-4;
+  }
+
+  /* フォームラベル */
+  .form-label {
+    @apply block text-base font-semibold text-gray-600 mb-1;
+  }
+
+  /* テーブル */
+  .table-responsive {
+    @apply overflow-x-auto rounded-lg border border-gray-200;
+  }
+
+  .data-table {
+    @apply w-full text-base;
+  }
+
+  .data-table thead tr {
+    @apply bg-gray-100 text-gray-600;
+  }
+
+  .data-table thead th {
+    @apply px-4 py-3 text-left font-semibold whitespace-nowrap;
+  }
+
+  .data-table tbody tr {
+    @apply border-t border-gray-100 hover:bg-blue-50 transition-colors;
+  }
+
+  .data-table tbody td {
+    @apply px-4 py-3;
+  }
+
+  /* バッジ */
+  .badge {
+    @apply inline-block px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  /* サマリーカード */
+  .summary-card {
+    @apply card text-center;
+  }
+
+  .summary-card .value {
+    @apply text-3xl font-bold text-blue-600 mt-2;
+  }
+
+  .summary-card .label {
+    @apply text-sm text-gray-500 mt-1;
+  }
+}
